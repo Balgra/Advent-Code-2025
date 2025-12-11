@@ -8,10 +8,13 @@ def input_reader():
 
     with open("inputs.txt") as f:
         for line in f:
-            if '-' in line:
-                ingredient_ids.append(line.strip())
+            l = line.strip()
+            if not l :
+                    continue
+            if '-' in l:
+                ingredient_ids.append(l.strip())
             else:
-                ingredients.append(line.strip())
+                ingredients.append(l.strip())
 
     return (ingredient_ids,ingredients)
 

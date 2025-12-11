@@ -8,7 +8,6 @@ input_tuple=file_reader.input_reader()
 
 
 fresh =0
-
 for values in input_tuple[0]:
 
     left,right = values.split('-')
