@@ -15,5 +15,9 @@ def input_reader():
     return num_rows,operators
 
 
+#input reader for part 2
+def input_reader_part2():
+    with open('inputs.txt', "r") as f:
+        lines = f.readlines()
 
-input_reader()
+    return lines
