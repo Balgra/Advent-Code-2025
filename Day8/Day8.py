@@ -41,21 +41,48 @@ def find_set(v) :
 def union_sets( a,  b) :
     root[find_set(b)] = find_set(a)
 
-wires = 1000
+# wires = 1000
 
-for d, n, m in sorted(distance)[:wires]:
+# for d, n, m in sorted(distance)[:wires]:
 
-    union_sets(n,m)
+#     union_sets(n,m)
 
-sizes = defaultdict(int)
+# sizes = defaultdict(int)
 
-for x in range(0,len(int_points)):
+# for x in range(0,len(int_points)):
 
-    sizes[find_set(x)] +=1
+#     sizes[find_set(x)] +=1
 
-rez = prod(sorted(sizes.values(), reverse=True)[:3])
+# rez = prod(sorted(sizes.values(), reverse=True)[:3])
 
-print(rez)
+# print(rez)
 
 
 # That's the right answer! You are one gold star closer to decorating the North Pole. [Continue to Part Two]
+
+
+
+#Part 2
+
+wires = 1000
+cons =0
+for i, (d, n, m) in enumerate(sorted(distance)):
+
+    n_root = find_set(n)
+    m_root = find_set(m)
+
+    if n_root != m_root:
+        cons +=1
+        union_sets(n,m)
+        if cons == len(int_points) -1:
+            rez = int_points[n][0] * int_points[m][0]
+
+
+print(rez)
+
+# That's the right answer! You are one gold star closer to decorating the North Pole.
+
+
+    
+
+
