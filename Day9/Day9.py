@@ -1,4 +1,3 @@
-
 from collections import defaultdict
 import file_reader
 from math import prod
